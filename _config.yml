@@ -5,7 +5,7 @@ description: Personal website
 googlewebfonts: Fira+Code:wght@400;500;700
 permalink: pretty
 
-baseurl: "/"
+baseurl: ""
 
 highlighter: rouge
 
