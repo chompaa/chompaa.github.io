@@ -1,21 +1,16 @@
-import {
-  IconBrandReact,
-  IconBrandSocketIo,
-  IconBrandTailwind,
-  IconBrandTypescript,
-} from "@tabler/icons-preact";
+export enum Tag {
+  Tailwind = "tailwindcss",
+  React = "react",
+  MaterialUI = "material-ui",
+  Express = "express",
+  SocketIo = "socket-io",
+  PeerJS = "peerjs",
+  TypeScript = "typescript",
+}
 
-import { JSX, cloneElement } from "preact";
-
-export const Tag: { [name: string]: JSX.Element } = {
-  Tailwind: <IconBrandTailwind />,
-  React: <IconBrandReact />,
-  SocketIo: <IconBrandSocketIo />,
-  TypeScript: <IconBrandTypescript />,
-};
-
-export const TagIcon = ({ icon }: { icon: JSX.Element }) => {
+export const TagIcon = ({ icon }: { icon: string }) => {
   return (
-    <div class="w-fit p-1">{cloneElement(icon, { stroke: 1, size: 26 })}</div>
+    // <div class="w-fit p-1">{cloneElement(icon, { stroke: 1, size: 26 })}</div>
+    <div class="w-fit rounded-md bg-main px-2 py-1 text-alt">{icon}</div>
   );
 };

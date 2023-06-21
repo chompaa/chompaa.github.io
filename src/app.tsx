@@ -10,7 +10,8 @@ import ProjectCard from "./components/ProjectCard";
 import { Tag } from "./components/TagIcon";
 
 import pathviz from "./assets/pathviz.jpg";
-import portfolio from "./assets/portfolio.jpg";
+import tictactoe from "./assets/tictactoe.jpg";
+import trello from "./assets/trello-clone.jpg";
 import zenithdraw from "./assets/zenithdraw.jpg";
 
 export const App = () => {
@@ -29,7 +30,7 @@ export const App = () => {
   return (
     <>
       <section
-        class={`relative h-screen transition-all duration-700 ${
+        class={`relative h-screen-d transition-all duration-700 ${
           landingVisible
             ? "translate-y-0 opacity-100"
             : "-translate-y-10 opacity-0"
@@ -89,9 +90,22 @@ export const App = () => {
                drawing, erasing, and more."
             }
             github={"https://github.com/chompaa/zenithdraw"}
-            tags={[Tag.React, Tag.SocketIo]}
+            tags={[Tag.Express, Tag.SocketIo, Tag.React]}
             visible={showcaseVisible}
             className={"delay-0"}
+          ></ProjectCard>
+          <ProjectCard
+            image={trello}
+            title={"Trello Clone"}
+            description={
+              "a trello clone. featuring draggable lists and cards (with animations!), and the \
+              ability to add/remove cards/lists."
+            }
+            github={"https://github.com/chompaa/trello-clone"}
+            demo={"https://chompaa.github.io/trello-clone"}
+            tags={[Tag.TypeScript, Tag.React, Tag.Tailwind]}
+            visible={showcaseVisible}
+            className={"delay-700"}
           ></ProjectCard>
           <ProjectCard
             image={pathviz}
@@ -100,29 +114,23 @@ export const App = () => {
               "a pathfinding visualizer. capable of generating mazes and solving them using \
                various algorithms."
             }
-            github={"https://github.com/chompaa/zenithdraw"}
+            github={"https://github.com/chompaa/pathfinding-visualizer"}
             demo={"https://chompaa.github.io/pathfinding-visualizer"}
-            tags={[Tag.React]}
+            tags={[Tag.TypeScript, Tag.React]}
             visible={showcaseVisible}
             className={"delay-200"}
           ></ProjectCard>
           <ProjectCard
+            image={tictactoe}
             title={"Tic-tac-toe"}
-            description={"a peer-to-peer app for the classic game tic-tac-toe."}
+            description={
+              "a peer-to-peer app for the classic game tic-tac-toe. project from 2019."
+            }
             github={"https://github.com/chompaa/tictactoe"}
-            tags={[Tag.React]}
+            demo={"https://chompaa.github.io/tictactoe"}
+            tags={[Tag.PeerJS, Tag.React, Tag.MaterialUI]}
             visible={showcaseVisible}
             className={"delay-500"}
-          ></ProjectCard>
-          <ProjectCard
-            image={portfolio}
-            title={"Portfolio"}
-            description={"this website."}
-            github={"https://github.com/chompaa/chompaa.github.io"}
-            demo={"https://chompaa.github.io/"}
-            tags={[Tag.React, Tag.Tailwind, Tag.TypeScript]}
-            visible={showcaseVisible}
-            className={"delay-700"}
           ></ProjectCard>
         </div>
       </section>

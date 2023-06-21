@@ -2,14 +2,18 @@
 export default {
   content: ["./src/**/*.{ts,tsx}", "./index.html"],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        "screen-d": "100dvh",
+      },
+      colors: {
+        main: "#1a1818",
+        alt: "#ece7e1",
+      },
+    },
     fontFamily: {
       sans: ["Roboto, sans-serif"],
       display: ["Playfair\\ Display"],
-    },
-    colors: {
-      main: "#1a1818",
-      alt: "#ece7e1",
     },
   },
   plugins: [],
