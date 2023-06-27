@@ -1,17 +1,21 @@
 export enum Tag {
-  Tailwind = "tailwindcss",
-  React = "react",
-  MaterialUI = "material-ui",
-  Express = "express",
-  SocketIo = "socket-io",
-  PeerJS = "peerjs",
-	Firebase = "firebase",
-  TypeScript = "typescript",
+  Tailwind = "Tailwind",
+  React = "React",
+  MaterialUI = "MUI",
+  Express = "Express",
+  SocketIo = "Socket-io",
+  PeerJS = "PeerJS",
+  Firebase = "Firebase",
+  TypeScript = "TypeScript",
 }
 
 export const TagIcon = ({ icon }: { icon: string }) => {
   return (
-    // <div class="w-fit p-1">{cloneElement(icon, { stroke: 1, size: 26 })}</div>
-    <div class="w-fit rounded-md bg-main px-2 py-1 text-alt dark:bg-alt dark:text-main">{icon}</div>
+    <div
+      class="w-fit rounded-full bg-main/25 px-3 py-1 text-xs font-medium leading-5 text-main 
+           dark:bg-alt/25 dark:text-alt"
+    >
+      {icon}
+    </div>
   );
 };

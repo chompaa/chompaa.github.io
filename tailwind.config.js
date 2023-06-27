@@ -13,8 +13,8 @@ export default {
       },
     },
     fontFamily: {
-      sans: ["Roboto, sans-serif"],
-      display: ["Playfair\\ Display"],
+      sans: ["Inter, sans-serif"],
+      display: ["Inter, Playfair\\ Display"],
     },
   },
   plugins: [],

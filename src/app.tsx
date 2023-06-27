@@ -4,31 +4,24 @@ import {
   IconMoon,
   IconSun,
 } from "@tabler/icons-preact";
-import useElementOnScreen from "./hooks/useElementOnScreen";
-
-import ButtonIcon from "./components/ButtonIcon";
-import ProjectCard from "./components/ProjectCard";
-import { Tag } from "./components/TagIcon";
-
 import { useEffect, useState } from "preact/hooks";
 import pathviz from "./assets/pathviz.jpg";
 import tictactoe from "./assets/tictactoe.jpg";
 import trello from "./assets/trello-clone.jpg";
 import zenithdraw from "./assets/zenithdraw.jpg";
-import ButtonNavigate from "./components/ButtonNavigate";
+import ButtonIcon from "./components/ButtonIcon";
+import ProjectCard from "./components/ProjectCard";
+import { Tag } from "./components/TagIcon";
+import useElementOnScreen from "./hooks/useElementOnScreen";
 
 export const App = () => {
   const intersectionOptions: IntersectionObserverInit = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.5,
+    threshold: 0.1,
   };
 
   const [landingRef, landingVisible] = useElementOnScreen(intersectionOptions);
-  const [showcaseRef, showcaseVisible] = useElementOnScreen({
-    ...intersectionOptions,
-    threshold: 0.25,
-  });
 
   const [theme, setTheme] = useState<string>(localStorage.theme);
 
@@ -51,110 +44,127 @@ export const App = () => {
   }, [theme]);
 
   return (
-    <div class="dark:bg-main dark:text-alt">
+    <div class="bg-alt text-main dark:bg-main dark:text-alt">
       <section
-        class={`relative h-screen-d transition-all duration-700 ${
-          landingVisible
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-10 opacity-0"
-        }`}
+        class={`min-h-screen-d relative mx-auto max-w-screen-xl justify-between px-6 transition-all 
+                duration-700 md:px-24 lg:px-48${
+                  landingVisible
+                    ? "translate-y-0 opacity-100"
+                    : "-translate-y-10 opacity-0"
+                }`}
         ref={landingRef}
         id="landing"
       >
-        <div class="fixed left-auto right-0 top-0 m-12">
-          <div class="flex gap-x-2">
-            <ButtonIcon
-              link="https://github.com/chompaa"
-              icon={<IconBrandGithub></IconBrandGithub>}
-            ></ButtonIcon>
-            <ButtonIcon
-              link="https://www.linkedin.com/in/antony-martin-122a92225/"
-              icon={<IconBrandLinkedin></IconBrandLinkedin>}
-            ></ButtonIcon>
-            <ButtonIcon
-              icon={
-                theme === "dark" ? <IconMoon></IconMoon> : <IconSun></IconSun>
-              }
-              onClick={() => handleChangeTheme()}
-            ></ButtonIcon>
+        <div class="flex flex-col lg:flex-row">
+          <div class="lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2">
+            <div class="flex flex-col gap-y-5 py-24">
+              <p class="font-display text-5xl font-black tracking-tight">
+                Antony Martin
+              </p>
+              <p class="text-xl font-medium tracking-tight">
+                Frontend Developer
+              </p>
+              <p class="text-l tracking-tight">Currently looking for work.</p>
+              <div class="lg:absolute lg:bottom-24">
+                <div class="flex gap-x-2">
+                  <ButtonIcon
+                    link="https://github.com/chompaa"
+                    icon={<IconBrandGithub></IconBrandGithub>}
+                  ></ButtonIcon>
+                  <ButtonIcon
+                    link="https://www.linkedin.com/in/antony-martin-122a92225/"
+                    icon={<IconBrandLinkedin></IconBrandLinkedin>}
+                  ></ButtonIcon>
+                  <ButtonIcon
+                    icon={
+                      theme === "dark" ? (
+                        <IconMoon></IconMoon>
+                      ) : (
+                        <IconSun></IconSun>
+                      )
+                    }
+                    onClick={() => handleChangeTheme()}
+                  ></ButtonIcon>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="flex h-full w-full snap-start content-center items-center justify-center pb-12">
-          <div class="flex flex-col content-center items-center justify-center gap-y-5">
-            <p class="font-display text-7xl font-black tracking-widest">
-              Antony
-            </p>
-            <p class="text-center tracking-wide">
-              frontend developer.
-              <br />
-              currently looking for work.
-            </p>
-            <ButtonNavigate href={showcaseRef}>view my projects</ButtonNavigate>
+          <div class="w-full lg:w-1/2 lg:pt-24">
+            <div class="mb-12">
+              <h2
+                class="sticky top-0 z-10 -mx-6 w-screen bg-alt/50 px-6 py-4 text-sm font-bold uppercase tracking-widest 
+                       backdrop-blur-xl dark:bg-main/50 md:-mx-24 md:px-24 lg:relative 
+                       lg:top-auto lg:mx-4 lg:w-fit lg:p-0 lg:pb-4"
+              >
+                About
+              </h2>
+              <p class="lg:mx-4">
+                Hi, I'm Antony. I have a bachelors in Mathematics, and am
+                currently undertaking a masters in Computer Science.
+              </p>
+            </div>
+            <h2
+              class="sticky top-0 z-10 -mx-6 w-screen bg-alt/50 px-6 py-4 text-sm font-bold uppercase tracking-widest 
+                       backdrop-blur-xl dark:bg-main/50 md:-mx-24 md:px-24 lg:relative 
+                       lg:top-auto lg:mx-4 lg:w-fit lg:p-0 lg:pb-4"
+            >
+              Showcase
+            </h2>
+            <div class="flex w-full flex-auto flex-col flex-wrap gap-12 pb-24 lg:gap-4">
+              <ProjectCard
+                image={zenithdraw}
+                title={"Zenithdraw"}
+                description={
+                  "Draw collaboratively with your friends! Features the ability to save and restore \
+                drawings, zoom/pan the canvas, change stroke sizes, and erase."
+                }
+                github={"https://github.com/chompaa/zenithdraw"}
+                tags={[Tag.Express, Tag.SocketIo, Tag.React]}
+                visible={landingVisible}
+                className={"delay-0"}
+              ></ProjectCard>
+              <ProjectCard
+                image={trello}
+                title={"Trello Clone"}
+                description={
+                  "A trello-board-like app. Keep track of your tasks and organize them into lists. \
+                Features drag-and-drop, realtime updates, along with user authentication and \
+                storage."
+                }
+                github={"https://github.com/chompaa/trello-clone"}
+                demo={"https://chompaa.github.io/trello-clone"}
+                tags={[Tag.React, Tag.Tailwind, Tag.Firebase]}
+                visible={landingVisible}
+                className={"delay-200"}
+              ></ProjectCard>
+              <ProjectCard
+                image={pathviz}
+                title={"Pathviz"}
+                description={
+                  "Visualize pathfinding algorithms such as Dijkstra's algorithm and DFS! Generate a \
+                maze or build your own and watch the algorithm a path."
+                }
+                github={"https://github.com/chompaa/pathfinding-visualizer"}
+                demo={"https://chompaa.github.io/pathfinding-visualizer"}
+                tags={[Tag.React]}
+                visible={landingVisible}
+                className={"delay-500"}
+              ></ProjectCard>
+              <ProjectCard
+                image={tictactoe}
+                title={"Tic-tac-toe"}
+                description={
+                  "A peer-to-peer tic-tac-toe game. Share your ID and connect with your friends! \
+                Not satisfied with the match outcome? Rematch!"
+                }
+                github={"https://github.com/chompaa/tictactoe"}
+                demo={"https://chompaa.github.io/tictactoe"}
+                tags={[Tag.PeerJS, Tag.React, Tag.MaterialUI]}
+                visible={landingVisible}
+                className={"delay-700"}
+              ></ProjectCard>
+            </div>
           </div>
-        </div>
-      </section>
-      <section
-        class="relative flex min-h-screen snap-start flex-col items-center justify-center"
-        ref={showcaseRef}
-        id="showcase"
-      >
-        <div
-          class="mt-12 flex w-full flex-auto flex-wrap content-center items-center justify-center 
-                 pb-48 lg:gap-x-24 lg:pb-0"
-        >
-          <ProjectCard
-            image={zenithdraw}
-            title={"Zenithdraw"}
-            description={
-              "a collaborative drawing app. features include; import/export, panning, zooming, \
-               drawing, erasing, and more."
-            }
-            github={"https://github.com/chompaa/zenithdraw"}
-            tags={[Tag.Express, Tag.SocketIo, Tag.React]}
-            visible={showcaseVisible}
-            className={"delay-0"}
-          ></ProjectCard>
-          <ProjectCard
-            image={trello}
-            title={"Trello Clone"}
-            description={
-              "a trello clone. featuring draggable lists and cards (with animations!), and the \
-              ability to add/remove cards/lists. has user auth and storage."
-            }
-            github={"https://github.com/chompaa/trello-clone"}
-            demo={"https://chompaa.github.io/trello-clone"}
-            tags={[Tag.React, Tag.Tailwind, Tag.Firebase]}
-            visible={showcaseVisible}
-            className={"delay-200"}
-          ></ProjectCard>
-          <ProjectCard
-            image={pathviz}
-            title={"Pathviz"}
-            description={
-              "a pathfinding visualizer. capable of generating mazes and solving them using \
-               various algorithms."
-            }
-            github={"https://github.com/chompaa/pathfinding-visualizer"}
-            demo={"https://chompaa.github.io/pathfinding-visualizer"}
-            tags={[Tag.React]}
-            visible={showcaseVisible}
-            className={"delay-500"}
-          ></ProjectCard>
-          <ProjectCard
-            image={tictactoe}
-            title={"Tic-tac-toe"}
-            description={
-              "a peer-to-peer app for the classic game tic-tac-toe. project from 2019."
-            }
-            github={"https://github.com/chompaa/tictactoe"}
-            demo={"https://chompaa.github.io/tictactoe"}
-            tags={[Tag.PeerJS, Tag.React, Tag.MaterialUI]}
-            visible={showcaseVisible}
-            className={"delay-700"}
-          ></ProjectCard>
-        </div>
-        <div class="mb-12 w-fit">
-          <ButtonNavigate href={landingRef}>back</ButtonNavigate>
         </div>
       </section>
     </div>
