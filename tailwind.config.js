@@ -11,6 +11,10 @@ export default {
         main: "#1a1818",
         alt: "#ece7e1",
       },
+      backgroundImage: {
+        "blob-dark": "url('/src/assets/blob-dark.svg')",
+        "blob-light": "url('/src/assets/blob-light.svg')",
+      },
     },
     fontFamily: {
       sans: ["Inter, sans-serif"],

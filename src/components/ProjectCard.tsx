@@ -29,8 +29,8 @@ const ProjectCard = ({
           visible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
         }`}
       >
-        <div class="flex gap-2">
-          <h1 class="items-center font-display font-bold tracking-wider">
+        <div class="flex items-center gap-2">
+          <h1 class="h-fit w-fit items-center font-display font-bold tracking-wider">
             {title}
           </h1>
           {demo ? (

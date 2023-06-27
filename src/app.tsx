@@ -40,7 +40,8 @@ export const App = () => {
   }, [theme]);
 
   return (
-    <div class="bg-alt text-main dark:bg-main dark:text-alt">
+    <div class="bg-transparent text-main dark:text-alt">
+      <div class="bg-blob-light fixed top-0 h-full w-full dark:bg-blob-dark"></div>
       <section
         class={`min-h-screen-d relative mx-auto max-w-screen-xl justify-between px-6 transition-all 
                 duration-700 md:px-24 lg:px-48${
@@ -91,8 +92,8 @@ export const App = () => {
             <div class="mb-12">
               <h2
                 class="sticky top-0 z-10 -mx-6 w-screen bg-alt/50 px-6 py-4 text-sm font-bold uppercase tracking-widest 
-                       backdrop-blur-xl dark:bg-main/50 md:-mx-24 md:px-24 lg:relative 
-                       lg:top-auto lg:mx-4 lg:w-fit lg:p-0 lg:pb-4"
+                       backdrop-blur-xl dark:bg-main/50 md:-mx-24 md:px-24 lg:relative lg:top-auto 
+                       lg:mx-4 lg:w-fit lg:bg-transparent lg:p-0 lg:pb-4 lg:dark:bg-transparent"
               >
                 About
               </h2>
@@ -107,8 +108,8 @@ export const App = () => {
             </div>
             <h2
               class="sticky top-0 z-10 -mx-6 w-screen bg-alt/50 px-6 py-4 text-sm font-bold uppercase tracking-widest 
-                       backdrop-blur-xl dark:bg-main/50 md:-mx-24 md:px-24 lg:relative 
-                       lg:top-auto lg:mx-4 lg:w-fit lg:p-0 lg:pb-4"
+                       backdrop-blur-xl dark:bg-main/50 md:-mx-24 md:px-24 lg:relative lg:top-auto 
+                       lg:mx-4 lg:w-fit lg:bg-transparent lg:p-0 lg:pb-4 lg:dark:bg-transparent"
             >
               Showcase
             </h2>
