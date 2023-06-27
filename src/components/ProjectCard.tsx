@@ -44,7 +44,9 @@ const ProjectCard = ({
             link={github}
           ></ButtonIcon>
         </div>
-        <p class="justify-inter-word flex text-sm">{description}</p>
+        <p class="justify-inter-word flex text-sm text-main/70 dark:text-alt/70">
+          {description}
+        </p>
         <div class="flex gap-2">
           {tags.map((icon: string) => (
             <TagIcon icon={icon}></TagIcon>

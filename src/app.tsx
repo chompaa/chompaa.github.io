@@ -60,7 +60,9 @@ export const App = () => {
               <p class="text-xl font-medium tracking-tight">
                 Frontend Developer
               </p>
-              <p class="text-l tracking-tight">Currently looking for work.</p>
+              <p class="text-l tracking-tight text-main/70 dark:text-alt/70">
+                Currently looking for work.
+              </p>
               <div class="lg:absolute lg:bottom-24">
                 <div class="flex gap-x-2">
                   <ButtonIcon
@@ -94,7 +96,7 @@ export const App = () => {
               >
                 About
               </h2>
-              <p class="lg:mx-4">
+              <p class="text-main/70 dark:text-alt/70 lg:mx-4">
                 Hi, I'm Antony. I have a bachelors in Mathematics, and am
                 currently undertaking a masters in Computer Science.
                 <br />
