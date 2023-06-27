@@ -53,7 +53,7 @@ export const App = () => {
       >
         <div class="flex flex-col lg:flex-row">
           <div class="lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2">
-            <div class="flex flex-col gap-y-5 py-24">
+            <div class="flex flex-col gap-y-5 pb-12 pt-24 lg:pb-24">
               <p class="font-display text-5xl font-black tracking-tight">
                 Antony Martin
               </p>
@@ -141,7 +141,7 @@ export const App = () => {
                 title={"Pathviz"}
                 description={
                   "Visualize pathfinding algorithms such as Dijkstra's algorithm and DFS! Generate a \
-                maze or build your own and watch the algorithm a path."
+                maze or build your own and watch the algorithm find a path."
                 }
                 github={"https://github.com/chompaa/pathfinding-visualizer"}
                 demo={"https://chompaa.github.io/pathfinding-visualizer"}
