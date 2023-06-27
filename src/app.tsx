@@ -5,10 +5,6 @@ import {
   IconSun,
 } from "@tabler/icons-preact";
 import { useEffect, useState } from "preact/hooks";
-import pathviz from "./assets/pathviz.jpg";
-import tictactoe from "./assets/tictactoe.jpg";
-import trello from "./assets/trello-clone.jpg";
-import zenithdraw from "./assets/zenithdraw.jpg";
 import ButtonIcon from "./components/ButtonIcon";
 import ProjectCard from "./components/ProjectCard";
 import { Tag } from "./components/TagIcon";
@@ -101,6 +97,10 @@ export const App = () => {
               <p class="lg:mx-4">
                 Hi, I'm Antony. I have a bachelors in Mathematics, and am
                 currently undertaking a masters in Computer Science.
+                <br />
+                <br />
+                In my spare time I enjoy working on personal projects,
+                bouldering, and going to the gym.
               </p>
             </div>
             <h2
@@ -112,7 +112,6 @@ export const App = () => {
             </h2>
             <div class="flex w-full flex-auto flex-col flex-wrap gap-12 pb-24 lg:gap-4">
               <ProjectCard
-                image={zenithdraw}
                 title={"Zenithdraw"}
                 description={
                   "Draw collaboratively with your friends! Features the ability to save and restore \
@@ -124,7 +123,6 @@ export const App = () => {
                 className={"delay-0"}
               ></ProjectCard>
               <ProjectCard
-                image={trello}
                 title={"Trello Clone"}
                 description={
                   "A trello-board-like app. Keep track of your tasks and organize them into lists. \
@@ -138,7 +136,6 @@ export const App = () => {
                 className={"delay-200"}
               ></ProjectCard>
               <ProjectCard
-                image={pathviz}
                 title={"Pathviz"}
                 description={
                   "Visualize pathfinding algorithms such as Dijkstra's algorithm and DFS! Generate a \
@@ -151,7 +148,6 @@ export const App = () => {
                 className={"delay-500"}
               ></ProjectCard>
               <ProjectCard
-                image={tictactoe}
                 title={"Tic-tac-toe"}
                 description={
                   "A peer-to-peer tic-tac-toe game. Share your ID and connect with your friends! \

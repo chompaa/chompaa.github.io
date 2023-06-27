@@ -5,7 +5,6 @@ import { IconArrowUpRight, IconBrandGithub } from "@tabler/icons-preact";
 import ButtonIcon from "./ButtonIcon";
 
 const ProjectCard = ({
-  image,
   title,
   tags,
   description,
@@ -14,7 +13,6 @@ const ProjectCard = ({
   visible,
   className,
 }: {
-  image?: string;
   title: string;
   tags: Array<string>;
   description: string;
