@@ -41,7 +41,7 @@ export const App = () => {
 
   return (
     <div class="bg-transparent text-main dark:text-alt">
-      <div class="bg-blob-light fixed top-0 h-full w-full dark:bg-blob-dark"></div>
+      <div class="fixed top-0 h-full w-full bg-blob-light dark:bg-blob-dark"></div>
       <section
         class={`min-h-screen-d relative mx-auto max-w-screen-xl justify-between px-6 transition-all 
                 duration-700 md:px-24 lg:px-48${
@@ -115,13 +115,14 @@ export const App = () => {
             </h2>
             <div class="flex w-full flex-auto flex-col flex-wrap gap-12 pb-24 lg:gap-4">
               <ProjectCard
-                title={"Zenithdraw"}
+                title={"Echo"}
                 description={
-                  "Draw collaboratively with your friends! Features the ability to save and restore \
-                drawings, zoom/pan the canvas, change stroke sizes, and erase."
+                  "A minimalist climbing shop. Whether you need clothing or equipment, \
+                Echo has you covered."
                 }
-                github={"https://github.com/chompaa/zenithdraw"}
-                tags={[Tag.Express, Tag.SocketIo, Tag.React]}
+                github={"https://github.com/chompaa/echo"}
+                demo={"https://chompaa.github.io/echo"}
+                tags={[Tag.React, Tag.SASS, Tag.ReactRouter, Tag.Zustand]}
                 visible={landingVisible}
                 className={"delay-0"}
               ></ProjectCard>
@@ -136,7 +137,18 @@ export const App = () => {
                 demo={"https://chompaa.github.io/trello-clone"}
                 tags={[Tag.React, Tag.Tailwind, Tag.Firebase]}
                 visible={landingVisible}
-                className={"delay-200"}
+                className={"delay-[200ms]"}
+              ></ProjectCard>
+              <ProjectCard
+                title={"Zenithdraw"}
+                description={
+                  "Draw collaboratively with your friends! Features the ability to save and restore \
+                drawings, zoom/pan the canvas, change stroke sizes, and erase."
+                }
+                github={"https://github.com/chompaa/zenithdraw"}
+                tags={[Tag.Express, Tag.SocketIo, Tag.React]}
+                visible={landingVisible}
+                className={"delay-[400ms]"}
               ></ProjectCard>
               <ProjectCard
                 title={"Pathviz"}
@@ -148,7 +160,7 @@ export const App = () => {
                 demo={"https://chompaa.github.io/pathfinding-visualizer"}
                 tags={[Tag.React]}
                 visible={landingVisible}
-                className={"delay-500"}
+                className={"delay-[600ms]"}
               ></ProjectCard>
               <ProjectCard
                 title={"Tic-tac-toe"}
@@ -160,7 +172,7 @@ export const App = () => {
                 demo={"https://chompaa.github.io/tictactoe"}
                 tags={[Tag.PeerJS, Tag.React, Tag.MaterialUI]}
                 visible={landingVisible}
-                className={"delay-700"}
+                className={"delay-[800ms]"}
               ></ProjectCard>
             </div>
           </div>

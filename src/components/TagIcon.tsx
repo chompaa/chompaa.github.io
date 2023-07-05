@@ -7,6 +7,9 @@ export enum Tag {
   PeerJS = "PeerJS",
   Firebase = "Firebase",
   TypeScript = "TypeScript",
+  ReactRouter = "React-router",
+  Zustand = "Zustand",
+  SASS = "SASS",
 }
 
 export const TagIcon = ({ icon }: { icon: string }) => {
