@@ -20,12 +20,9 @@ const ButtonIcon = ({
         }
       }}
       target="_blank"
-      class="flex w-fit cursor-pointer items-center justify-center rounded-lg p-[0.125rem] 
-             shadow-[inset_0_0_0_0] shadow-main transition duration-500 ease-in-out 
-             hover:text-alt hover:shadow-[inset_0_0_0_26px] hover:shadow-main 
-             dark:hover:text-main dark:hover:shadow-alt"
+      class="flex w-fit cursor-pointer items-center justify-center p-[0.125rem] hover:text-main/75 dark:hover:text-alt/75"
     >
-      {cloneElement(icon, { stroke: 1, size: 26 })}
+      {cloneElement(icon, { className: "size-6" })}
     </a>
   );
 };

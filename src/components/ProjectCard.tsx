@@ -1,31 +1,42 @@
 import { TagIcon } from "./TagIcon";
 
-import { IconArrowUpRight, IconBrandGithub } from "@tabler/icons-preact";
+import { ArrowUpRight } from "lucide-react";
 
-import ButtonIcon from "./ButtonIcon";
+import { useState } from "preact/hooks";
 
 const ProjectCard = ({
   title,
   tags,
   description,
-  demo,
-  github,
+  repo,
+  demo = true,
   visible,
   className,
 }: {
   title: string;
   tags: Array<string>;
   description: string;
-  demo?: string;
-  github: string;
+  repo: string;
+  demo?: boolean;
   visible: boolean;
-  className: string;
+  className?: string;
 }) => {
+  const [hover, setHover] = useState(false);
+
   return (
-    <div class="align-start flex flex-col gap-4 rounded-md lg:flex-row lg:p-4 lg:hover:bg-alt/10">
+    <a
+      class="align-start flex flex-col gap-4 rounded-md border-t-transparent text-left dark:hover:border-t-alt/15 lg:flex-row lg:border-t lg:p-4 lg:hover:bg-main/5 dark:lg:hover:bg-alt/10"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      href={
+        demo
+          ? `https://chompaa.github.io/${repo}`
+          : `https://github.com/chompaa/${repo}`
+      }
+    >
       <div
         class={`flex h-fit min-h-max w-full flex-col content-center justify-center gap-4 
-          transition-all ease-in-out ${className} ${
+          transition-opacity ease-in-out ${className} ${
           visible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
         }`}
       >
@@ -33,27 +44,24 @@ const ProjectCard = ({
           <h1 class="h-fit w-fit items-center font-display font-bold tracking-wider">
             {title}
           </h1>
-          {demo ? (
-            <ButtonIcon
-              icon={<IconArrowUpRight></IconArrowUpRight>}
-              link={demo}
-            ></ButtonIcon>
-          ) : null}
-          <ButtonIcon
-            icon={<IconBrandGithub></IconBrandGithub>}
-            link={github}
-          ></ButtonIcon>
+          <div
+            className={`${
+              hover
+                ? "-translate-y-[0.2rem] translate-x-[0.2rem]"
+                : "translate-y-[0.1rem]"
+            } transition-transform ease-in-out`}
+          >
+            <ArrowUpRight />
+          </div>
         </div>
-        <p class="justify-inter-word flex text-sm text-main/70 dark:text-alt/70">
-          {description}
-        </p>
+        <p class="flex text-sm text-main/70 dark:text-alt/70">{description}</p>
         <div class="flex gap-2">
           {tags.map((icon: string) => (
             <TagIcon icon={icon}></TagIcon>
           ))}
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

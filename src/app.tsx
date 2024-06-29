@@ -1,9 +1,5 @@
-import {
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconMoon,
-  IconSun,
-} from "@tabler/icons-preact";
+import { SiGithub, SiLinkedin } from "@icons-pack/react-simple-icons";
+import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "preact/hooks";
 import ButtonIcon from "./components/ButtonIcon";
 import ProjectCard from "./components/ProjectCard";
@@ -59,7 +55,7 @@ export const App = () => {
                 Antony Martin
               </p>
               <p class="text-xl font-medium tracking-tight">
-                Frontend Developer
+                Software Engineer.
               </p>
               <p class="text-l tracking-tight text-main/70 dark:text-alt/70">
                 Currently looking for work.
@@ -68,20 +64,14 @@ export const App = () => {
                 <div class="flex gap-x-2">
                   <ButtonIcon
                     link="https://github.com/chompaa"
-                    icon={<IconBrandGithub></IconBrandGithub>}
+                    icon={<SiGithub></SiGithub>}
                   ></ButtonIcon>
                   <ButtonIcon
                     link="https://www.linkedin.com/in/antony-martin-122a92225/"
-                    icon={<IconBrandLinkedin></IconBrandLinkedin>}
+                    icon={<SiLinkedin></SiLinkedin>}
                   ></ButtonIcon>
                   <ButtonIcon
-                    icon={
-                      theme === "dark" ? (
-                        <IconMoon></IconMoon>
-                      ) : (
-                        <IconSun></IconSun>
-                      )
-                    }
+                    icon={theme === "dark" ? <Moon></Moon> : <Sun></Sun>}
                     onClick={() => handleChangeTheme()}
                   ></ButtonIcon>
                 </div>
@@ -98,8 +88,8 @@ export const App = () => {
                 About
               </h2>
               <p class="text-main/70 dark:text-alt/70 lg:mx-4">
-                Hi, I'm Antony. I have a bachelors in Mathematics, and am
-                currently undertaking a masters in Computer Science.
+                Hi, I'm Antony. I hold a bachelor's in Mathematics, and a
+                master's in Computer Science. I love software engineering!
                 <br />
                 <br />
                 In my spare time I enjoy working on personal projects,
@@ -115,64 +105,51 @@ export const App = () => {
             </h2>
             <div class="flex w-full flex-auto flex-col flex-wrap gap-12 pb-24 lg:gap-4">
               <ProjectCard
-                title={"Echo"}
+                title={"Programming Language"}
                 description={
-                  "A minimalist climbing shop. Whether you need clothing or equipment, \
-                Echo has you covered."
+                  "An interpreted programming language with features including binary/unary expressions, functions, loops, and control flow. Coupled with a playground website."
                 }
-                github={"https://github.com/chompaa/echo"}
-                demo={"https://chompaa.github.io/echo"}
-                tags={[Tag.React, Tag.SASS, Tag.ReactRouter, Tag.Zustand]}
+                repo={"dom"}
+                tags={[Tag.Rust, Tag.WebAssembly, Tag.React, Tag.Tailwind]}
                 visible={landingVisible}
-                className={"delay-0"}
               ></ProjectCard>
               <ProjectCard
-                title={"Trello Clone"}
+                title={"Kanban Board"}
                 description={
-                  "A trello-board-like app. Keep track of your tasks and organize them into lists. \
-                Features drag-and-drop, realtime updates, along with user authentication and \
-                storage."
+                  "A kanban board app with smooth drag-and-drop, realtime database connection, and user authentication."
                 }
-                github={"https://github.com/chompaa/trello-clone"}
-                demo={"https://chompaa.github.io/trello-clone"}
+                repo={"tmro"}
                 tags={[Tag.React, Tag.Tailwind, Tag.Firebase]}
                 visible={landingVisible}
-                className={"delay-[200ms]"}
               ></ProjectCard>
               <ProjectCard
-                title={"Zenithdraw"}
+                title={"Drawing App"}
                 description={
-                  "Draw collaboratively with your friends! Features the ability to save and restore \
-                drawings, zoom/pan the canvas, change stroke sizes, and erase."
+                  "A collaborative drawing app that utilizes WebSockets. Supports canvas zooming/panning, draw tool customization, and erasing."
                 }
-                github={"https://github.com/chompaa/zenithdraw"}
+                repo={"zenithdraw"}
+                demo={false}
                 tags={[Tag.Express, Tag.SocketIo, Tag.React]}
                 visible={landingVisible}
-                className={"delay-[400ms]"}
               ></ProjectCard>
               <ProjectCard
-                title={"Pathviz"}
+                title={"Pathfinding Visualizer"}
                 description={
-                  "Visualize pathfinding algorithms such as Dijkstra's algorithm and DFS! Generate a \
+                  "Visualize pathfinding algorithms such as Dijkstra's algorithm and DFS. Generate a \
                 maze or build your own and watch the algorithm find a path."
                 }
-                github={"https://github.com/chompaa/pathfinding-visualizer"}
-                demo={"https://chompaa.github.io/pathfinding-visualizer"}
+                repo={"pathfinding-visualizer"}
                 tags={[Tag.React]}
                 visible={landingVisible}
-                className={"delay-[600ms]"}
               ></ProjectCard>
               <ProjectCard
                 title={"Tic-tac-toe"}
                 description={
-                  "A peer-to-peer tic-tac-toe game. Share your ID and connect with your friends! \
-                Not satisfied with the match outcome? Rematch!"
+                  "A peer-to-peer tic-tac-toe game. Contains various animations and rematch functionality."
                 }
-                github={"https://github.com/chompaa/tictactoe"}
-                demo={"https://chompaa.github.io/tictactoe"}
+                repo={"tictactoe"}
                 tags={[Tag.PeerJS, Tag.React, Tag.MaterialUI]}
                 visible={landingVisible}
-                className={"delay-[800ms]"}
               ></ProjectCard>
             </div>
           </div>
