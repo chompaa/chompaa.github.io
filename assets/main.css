@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "JetBrains Mono", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+h2,
+a {
+  color: #bfbfbf;
+}
+
+a {
+  text-decoration: underline;
+}
